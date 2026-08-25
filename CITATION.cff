@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use the HEMOX Explorer in your research, please cite this software."
+title: "HEMOX–SP-20 Validation Explorer"
+type: software
+version: 1.7.12
+date-released: 2026-08-25
+authors:
+  - family-names: Mohamed
+    given-names: Ahmed Reda
+repository-code: "https://github.com/Ahmed-Reda-SILO/HEMOX"
+url: "https://ahmed-reda-silo.github.io/HEMOX/"
+abstract: "A browser-based explorer for synchronized HEMOX and SP-20 validation, calibration transfer, agreement analysis, motion and signal-quality assessment, and research reporting."
