@@ -95,12 +95,17 @@ The explorer automatically inspects column names and uses the validated HEMOX ou
 
 The workflow in `.github/workflows/pages.yml` deploys the explorer whenever the `main` branch is updated.
 
+> [!WARNING]
+> Upload the **contents** of the repository package, not the ZIP file or an outer `HEMOX` folder. At the repository root, GitHub must show `index.html`, `README.md`, and `.github` directly.
+
 After creating the GitHub repository:
 
 1. Open **Settings → Pages**.
 2. Under **Build and deployment**, choose **GitHub Actions** as the source.
 3. Push to `main` or manually run the **Deploy HEMOX to GitHub Pages** workflow.
 4. Open `https://ahmed-reda-silo.github.io/HEMOX/`.
+
+For a complete publishing checklist and 404 troubleshooting, see [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ## 📁 Repository structure
 
@@ -110,6 +115,7 @@ HEMOX/
 ├── .nojekyll                     # Serve the static app without Jekyll processing
 ├── CHANGELOG.md                  # Version history
 ├── CITATION.cff                  # Citation metadata
+├── DEPLOYMENT.md                 # Publishing and 404 troubleshooting
 ├── README.md                     # Project documentation
 └── index.html                    # Complete HEMOX browser application
 ```
