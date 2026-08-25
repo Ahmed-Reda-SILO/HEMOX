@@ -40,23 +40,9 @@ All uploaded recordings are processed locally in the browser. The explorer does 
 
 ## 🚀 Quick start
 
-### Option 1 — Open the hosted explorer
+### Open the hosted explorer
 
-Use **[Open the HEMOX Explorer](https://ahmed-reda-silo.github.io/HEMOX/)**. GitHub Pages serves the same `index.html` file contained in this repository.
-
-### Option 2 — Open it directly
-
-Download or clone the repository, then double-click `index.html`. The explorer is fully self-contained and works offline in a modern browser.
-
-### Option 3 — Run a local web server
-
-```bash
-git clone https://github.com/Ahmed-Reda-SILO/HEMOX.git
-cd HEMOX
-python -m http.server 8000
-```
-
-Then open <http://localhost:8000>.
+Use [**Open the HEMOX Explorer**](https://ahmed-reda-silo.github.io/HEMOX/).
 
 ## 🧭 Typical workflow
 
@@ -91,22 +77,6 @@ The explorer automatically inspects column names and uses the validated HEMOX ou
 | Technical report | Produce a structured interpretation with equations, findings, and limitations |
 | Export | Download reproducible data tables, figures, and calibration settings |
 
-## 🌐 GitHub Pages deployment
-
-The workflow in `.github/workflows/pages.yml` deploys the explorer whenever the `main` branch is updated.
-
-> [!WARNING]
-> Upload the **contents** of the repository package, not the ZIP file or an outer `HEMOX` folder. At the repository root, GitHub must show `index.html`, `README.md`, and `.github` directly.
-
-After creating the GitHub repository:
-
-1. Open **Settings → Pages**.
-2. Under **Build and deployment**, choose **GitHub Actions** as the source.
-3. Push to `main` or manually run the **Deploy HEMOX to GitHub Pages** workflow.
-4. Open `https://ahmed-reda-silo.github.io/HEMOX/`.
-
-For a complete publishing checklist and 404 troubleshooting, see [DEPLOYMENT.md](DEPLOYMENT.md).
-
 ## 📁 Repository structure
 
 ```text
@@ -126,6 +96,38 @@ HEMOX/
 - No research data are uploaded by this static application.
 - The synchronized observations and metrics can be exported for audit and reproducibility.
 - The difference convention is always **HEMOX − SP-20**.
+
+## 📚 How to cite
+
+If you use the HEMOX Explorer, its analysis workflow, generated figures, or exported results in an academic publication, please cite the software.
+
+### IEEE reference format
+
+> A. R. Mohamed, “HEMOX–SP-20 Validation Explorer,” version 1.7.12, Aug. 2026. [Online]. Available: https://github.com/Ahmed-Reda-SILO/HEMOX. Accessed: Aug. 25, 2026.
+
+### IEEEtran LaTeX format
+
+```latex
+\bibitem{HEMOX}
+A. R. Mohamed, ``HEMOX--SP-20 Validation Explorer,''
+version 1.7.12, Aug. 2026. [Online]. Available:
+\url{https://github.com/Ahmed-Reda-SILO/HEMOX}.
+Accessed: Aug. 25, 2026.
+```
+
+### BibTeX format
+
+```bibtex
+@misc{Mohamed2026HEMOX,
+  author       = {Ahmed Reda Mohamed},
+  title        = {{HEMOX--SP-20 Validation Explorer}},
+  year         = {2026},
+  month        = aug,
+  note         = {Version 1.7.12, accessed Aug. 25, 2026},
+  howpublished = {GitHub repository},
+  url          = {https://github.com/Ahmed-Reda-SILO/HEMOX}
+}
+```
 
 ## 👨‍🔬 Author
 
