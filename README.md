@@ -2,14 +2,14 @@
 
 # 🫀 HEMOX
 
-### Dual-site PPG/IMU validation, calibration, and publication explorer
+### Synchronous Dual-Site PPG–IMU Monitoring, Calibration, and Validation Platform
 
-[![Version](https://img.shields.io/badge/version-1.7.12-1261A0?style=for-the-badge)](CHANGELOG.md)
-[![Browser App](https://img.shields.io/badge/browser-app-18794E?style=for-the-badge&logo=googlechrome&logoColor=white)](index.html)
-[![No Installation](https://img.shields.io/badge/installation-none-B64B2A?style=for-the-badge)](#-quick-start)
-[![GitHub Pages](https://img.shields.io/badge/deployment-GitHub%20Pages-222?style=for-the-badge&logo=github)](https://ahmed-reda-silo.github.io/HEMOX/)
+[![Android App](https://img.shields.io/badge/Android-v1.3.7.1-3DDC84?style=for-the-badge&logo=android&logoColor=white)](HEMOXV1.3.7.1.apk)
+[![Explorer](https://img.shields.io/badge/Validation%20Explorer-v1.7.12-1261A0?style=for-the-badge)](index.html)
+[![GitHub Pages](https://img.shields.io/badge/Open-HEMOX%20Explorer-222?style=for-the-badge&logo=github)](https://ahmed-reda-silo.github.io/HEMOX/)
 
-**[🚀 Open the HEMOX Explorer](https://ahmed-reda-silo.github.io/HEMOX/)**
+**[📱 Download HEMOX Android App](HEMOXV1.3.7.1.apk)**  
+**[🚀 Open the HEMOX Validation Explorer](https://ahmed-reda-silo.github.io/HEMOX/)**
 
 </div>
 
@@ -17,122 +17,160 @@
 
 ## 🔬 Overview
 
-HEMOX is a self-contained research explorer for comparing the dual-site HEMOX PPG/IMU platform with the commercial SP-20 pulse oximeter. It supports synchronized multi-run analysis, calibration-development and independent-validation separation, agreement assessment, motion and signal-quality evidence, and publication-ready exports.
+**HEMOX** is a wearable, wireless, dual-site photoplethysmography (PPG) and inertial measurement unit (IMU) platform developed for synchronized bilateral physiological monitoring. The system is designed to acquire red/infrared PPG and local motion information from two independent sensing sites, preserve a common temporal reference, and support motion- and signal-quality-aware physiological analysis and multi-site fusion.
 
-All uploaded recordings are processed locally in the browser. The explorer does not require a backend, database, package installation, or build step.
+The software workflow combines an Android acquisition/monitoring application with a browser-based validation explorer for synchronized comparison against a commercial pulse-oximetry comparator, calibration development, independent validation, agreement analysis, and publication-oriented reporting.
 
 > [!IMPORTANT]
-> HEMOX–SP-20 results quantify agreement with a commercial comparator. They do not constitute formal arterial-reference pulse-oximetry validation.
+> HEMOX is a research platform. Agreement with a commercial pulse-oximetry comparator does **not** constitute formal arterial-reference pulse-oximetry validation or clinical diagnostic certification.
 
-## ✨ Main capabilities
+## 🎯 System concept
 
-- 📂 Multi-run SP-20 and HEMOX data management
-- ⏱️ Strict one-to-one timestamp synchronization
-- 🧪 Separate calibration and independent-validation roles
-- 📊 Bias, MAE, RMSE, MAPE, ACC, correlation, and limits of agreement
-- 📈 Comparator trends, per-run agreement, and Bland–Altman figures
-- 🫁 SpO₂ and heart-rate analysis with independent availability metrics
-- 🏃 Dual-IMU motion and signal-quality robustness evidence
-- 🧮 M0–M3 calibration-model comparison and frozen coefficients
-- 📱 Android-ready calibration parameter export
-- 📝 Detailed technical reports and publication-ready SVG/PNG figures
-- 🔒 Local browser processing for research-data privacy
+The HEMOX workflow follows an end-to-end synchronized multi-site architecture:
 
-## 🚀 Quick start
+```text
+CH1 PPG + IMU ─┐
+               ├─> Synchronized wireless acquisition
+CH2 PPG + IMU ─┘              │
+                              ▼
+                   Common bilateral timeline
+                              │
+              ┌───────────────┴───────────────┐
+              ▼                               ▼
+      Recording / export          Motion + signal quality
+                                              │
+                                              ▼
+                                  Site-specific estimates
+                                              │
+                                              ▼
+                                   Adaptive multi-site fusion
+                                              │
+                                              ▼
+                                   Calibration correction
+                                              │
+                                              ▼
+                                      HR / SpO₂ output
+```
 
-### Open the hosted explorer
+The architecture separates acquisition, storage, analysis, and calibration so that synchronized raw measurements are preserved independently of downstream processing.
 
-Use [**Open the HEMOX Explorer**](https://ahmed-reda-silo.github.io/HEMOX/).
+## 📱 HEMOX Android application
 
-## 🧭 Typical workflow
+Current APK: **HEMOX v1.3.7.1**
 
-1. Add the required recording runs.
+The Android application supports the HEMOX dual-node workflow, including:
+
+- Bluetooth Low Energy (BLE) connection to two sensing nodes
+- synchronized CH1/CH2 acquisition
+- real-time red/infrared PPG visualization
+- six-axis IMU monitoring
+- synchronized session recording
+- physiological and signal-quality visualization
+- post-recording inspection and export
+
+### Install
+
+Download **[`HEMOXV1.3.7.1.apk`](HEMOXV1.3.7.1.apk)** and install it on a compatible Android device. Android may require permission to install applications from the browser or file manager used to open the APK.
+
+> [!NOTE]
+> The APK is provided for research and prototype evaluation. It is not distributed as a certified medical application.
+
+## 📊 HEMOX Validation Explorer
+
+The browser-based explorer supports synchronized analysis of HEMOX recordings against the commercial SP-20 pulse-oximetry comparator. All uploaded recordings are processed locally in the browser; no backend or package installation is required.
+
+**[Open the hosted HEMOX Explorer](https://ahmed-reda-silo.github.io/HEMOX/)**
+
+### Main analysis capabilities
+
+- multi-run HEMOX and SP-20 data management
+- synchronized one-to-one temporal matching
+- separate calibration-development and independent-validation roles
+- bias, MAE, RMSE, MAPE, accuracy, correlation, and limits of agreement
+- Bland–Altman and regression analysis
+- CH1, CH2, and fused physiological trends
+- motion and signal-quality robustness analysis
+- M0–M3 calibration-model comparison with fixed coefficients
+- export of synchronized pairs, metrics, figures, reports, and calibration settings
+
+## 🧭 Typical validation workflow
+
+1. Add the required HEMOX recording runs.
 2. Assign each run to **Calibration**, **Independent validation**, or **Excluded**.
-3. Upload one SP-20 CSV/TXT file per run.
-4. Upload the HEMOX `FUSED_TRENDS` file and any supporting export files.
-5. Confirm synchronization settings and select **Analyze all runs**.
-6. Review performance, calibration transfer, agreement, motion, SQI, and decision evidence.
-7. Export synchronized pairs, metrics, figures, reports, and frozen calibration settings.
+3. Upload one SP-20 CSV/TXT file for each comparator recording.
+4. Upload the corresponding HEMOX validated/fused trend files and optional supporting data.
+5. Confirm synchronization settings and run the pooled analysis.
+6. Review physiological agreement, calibration transfer, motion, signal quality, and bilateral-channel behavior.
+7. Export synchronized data, performance metrics, figures, reports, and fixed calibration parameters.
 
-## 📥 Supported inputs
+## 📥 Supported explorer inputs
 
-| Source | Required input | Optional supporting evidence |
+| Source | Primary input | Optional supporting evidence |
 |---|---|---|
-| SP-20 | One CSV, TXT, or TSV recording per run | — |
-| HEMOX | `FUSED_TRENDS` or a compatible validated-trends file | `PARAMETER_TRENDS`, `RAW`, `WINDOWS`, `MOTION_THRESHOLDS`, `SESSION_SUMMARY`, `METADATA`, and `REPORT` files |
+| SP-20 | CSV, TXT, or TSV recording per run | — |
+| HEMOX | `FUSED_TRENDS` or compatible validated-trends file | `PARAMETER_TRENDS`, `RAW`, `WINDOWS`, `MOTION_THRESHOLDS`, `SESSION_SUMMARY`, `METADATA`, and `REPORT` files |
 
-The explorer automatically inspects column names and uses the validated HEMOX output for synchronized physiological comparison.
+The explorer automatically inspects compatible column names and uses synchronized HEMOX outputs for physiological comparison.
 
 ## 🧩 Analysis modules
 
 | Module | Purpose |
 |---|---|
-| Data & synchronization | Verify uploads, roles, common intervals, and temporal matching |
+| Data & synchronization | Verify uploads, run roles, common intervals, and temporal matching |
 | Performance | Summarize per-run, pooled calibration, pooled validation, and overall metrics |
-| Calibration | Estimate models using calibration runs and freeze them before validation |
+| Calibration | Estimate candidate models from calibration runs and freeze coefficients before validation |
 | Filtered & fused | Inspect CH1, CH2, fused trends, and inter-channel disagreement |
-| IMU motion | Relate accelerometer/gyroscope evidence to recording quality |
-| Agreement | Generate scatter, regression, and Bland–Altman results |
+| IMU motion | Relate acceleration/gyroscope evidence to signal reliability |
+| Agreement | Generate regression and Bland–Altman analyses |
 | SQI robustness | Examine error as a function of signal quality |
-| Technical report | Produce a structured interpretation with equations, findings, and limitations |
-| Export | Download reproducible data tables, figures, and calibration settings |
+| Technical report | Produce structured findings, equations, limitations, and interpretation |
+| Export | Generate reproducible tables, figures, synchronized pairs, and calibration settings |
 
-## 📁 Repository structure
+## 📁 Repository contents
 
 ```text
 HEMOX/
-├── .github/workflows/pages.yml   # Automatic GitHub Pages deployment
-├── .nojekyll                     # Serve the static app without Jekyll processing
-├── CHANGELOG.md                  # Version history
-├── CITATION.cff                  # Citation metadata
-├── DEPLOYMENT.md                 # Publishing and 404 troubleshooting
-├── README.md                     # Project documentation
-└── index.html                    # Complete HEMOX browser application
+├── CHANGELOG.md              # Explorer version history
+├── CITATION.cff              # Citation metadata
+├── DEPLOYMENT.md             # GitHub Pages deployment notes
+├── HEMOXV1.3.7.1.apk         # HEMOX Android application
+├── README.md                 # Project documentation
+└── index.html                # Self-contained HEMOX Validation Explorer
 ```
 
 ## 🔐 Privacy and reproducibility
 
-- Recordings remain in browser memory during analysis.
-- No research data are uploaded by this static application.
-- The synchronized observations and metrics can be exported for audit and reproducibility.
-- The difference convention is always **HEMOX − SP-20**.
+- Validation recordings loaded into the browser explorer remain in local browser memory.
+- The static explorer does not upload research recordings to an external backend.
+- Synchronized observations, performance metrics, and analysis settings can be exported for audit and reproducibility.
+- The agreement convention used by the explorer is **HEMOX − SP-20**.
+- Calibration-development and independent-validation data are handled separately to avoid fitting on held-out validation recordings.
 
-## 📚 How to cite
+## 📚 Citation
 
-If you use the HEMOX Explorer, its analysis workflow, generated figures, or exported results in an academic publication, please cite the software.
+If you use the HEMOX software platform, Android application, validation explorer, analysis workflow, generated figures, or exported results in academic work, please cite the repository.
 
-### IEEE reference format
+### IEEE-style reference
 
-> A. R. Mohamed, “HEMOX–SP-20 Validation Explorer,” version 1.7.12, Aug. 2026. [Online]. Available: https://github.com/Ahmed-Reda-SILO/HEMOX. Accessed: Aug. 25, 2026.
+> A. R. Mohamed, “HEMOX: Synchronous dual-site PPG–IMU monitoring and validation platform,” GitHub repository, 2026. [Online]. Available: https://github.com/Ahmed-Reda-SILO/HEMOX.
 
-### IEEEtran LaTeX format
-
-```latex
-\bibitem{HEMOX}
-A. R. Mohamed, ``HEMOX--SP-20 Validation Explorer,''
-version 1.7.12, Aug. 2026. [Online]. Available:
-\url{https://github.com/Ahmed-Reda-SILO/HEMOX}.
-Accessed: Aug. 25, 2026.
-```
-
-### BibTeX format
+### BibTeX
 
 ```bibtex
 @misc{Mohamed2026HEMOX,
   author       = {Ahmed Reda Mohamed},
-  title        = {{HEMOX--SP-20 Validation Explorer}},
+  title        = {{HEMOX}: Synchronous Dual-Site {PPG--IMU} Monitoring and Validation Platform},
   year         = {2026},
-  month        = aug,
-  note         = {Version 1.7.12, accessed Aug. 25, 2026},
   howpublished = {GitHub repository},
-  url          = {https://github.com/Ahmed-Reda-SILO/HEMOX}
+  url          = {https://github.com/Ahmed-Reda-SILO/HEMOX},
+  note         = {Android application, validation explorer, and supporting software resources}
 }
 ```
 
 ## 👨‍🔬 Author
 
 **Dr. Ahmed Reda Mohamed, Member, IEEE**  
-Postdoctoral Fellow, Interdisciplinary Research Center for Communication Systems and Sensing (IRC-CSS)  
+Interdisciplinary Research Center for Communication Systems and Sensing (IRC-CSS)  
 King Fahd University of Petroleum and Minerals (KFUPM), Dhahran, Saudi Arabia
 
 Project profile: [Ahmed-Reda-SILO](https://github.com/Ahmed-Reda-SILO)
@@ -141,6 +179,6 @@ Project profile: [Ahmed-Reda-SILO](https://github.com/Ahmed-Reda-SILO)
 
 <div align="center">
 
-Developed for reproducible biomedical-signal validation and publication support. 🫀📊
+**HEMOX — synchronized multi-site physiological sensing for reproducible wearable-health research.**
 
 </div>
