@@ -6,9 +6,11 @@
 
 [![Android App](https://img.shields.io/badge/Android-v1.3.7.1-3DDC84?style=for-the-badge&logo=android&logoColor=white)](HEMOXV1.3.7.1.apk)
 [![Explorer](https://img.shields.io/badge/Validation%20Explorer-v1.7.12-1261A0?style=for-the-badge)](index.html)
+[![Sample Data](https://img.shields.io/badge/Sample-Dataset-8A2BE2?style=for-the-badge)](samples/HEMOX_DUAL_20121986L00_20260818_213825.zip)
 [![GitHub Pages](https://img.shields.io/badge/Open-HEMOX%20Explorer-222?style=for-the-badge&logo=github)](https://ahmed-reda-silo.github.io/HEMOX/)
 
 **[📱 Download HEMOX Android App](HEMOXV1.3.7.1.apk)**  
+**[📦 Download Sample Dataset](samples/HEMOX_DUAL_20121986L00_20260818_213825.zip)**  
 **[🚀 Open the HEMOX Validation Explorer](https://ahmed-reda-silo.github.io/HEMOX/)**
 
 </div>
@@ -93,6 +95,30 @@ The browser-based explorer supports synchronized analysis of HEMOX recordings ag
 - M0–M3 calibration-model comparison with fixed coefficients
 - export of synchronized pairs, metrics, figures, reports, and calibration settings
 
+## 📦 Sample dataset
+
+A complete example HEMOX dual-site recording session is provided to demonstrate the exported data structure and allow users to test the validation workflow without first acquiring their own recording.
+
+**[Download `HEMOX_DUAL_20121986L00_20260818_213825.zip`](samples/HEMOX_DUAL_20121986L00_20260818_213825.zip)**
+
+The archive contains one HEMOX session together with the corresponding SP-20 comparator recording:
+
+| File | Description |
+|---|---|
+| `*_RAW.csv` | synchronized raw bilateral PPG and IMU recording |
+| `*_PARAMETER_TRENDS.csv` | time-varying physiological and quality parameters |
+| `*_FUSED_TRENDS.csv` | fused physiological output used for comparator analysis |
+| `*_WINDOWS.csv` | window-level processing and quality information |
+| `*_MOTION_THRESHOLDS.csv` | motion-related threshold information |
+| `*_SESSION_SUMMARY.csv` | compact session-level summary |
+| `*_METADATA.txt` | recording and configuration metadata |
+| `*_REPORT.txt` | generated session report |
+| `*_RECORDING.xlsx` | consolidated spreadsheet export |
+| `sp20-L00.csv` | corresponding commercial pulse-oximetry comparator recording |
+
+> [!NOTE]
+> This archive is provided as an **example dataset** illustrating the HEMOX export format and analysis workflow. It should not be interpreted as the complete experimental dataset used for all calibration or validation results reported in associated research work.
+
 ## 🧭 Typical validation workflow
 
 1. Add the required HEMOX recording runs.
@@ -102,6 +128,8 @@ The browser-based explorer supports synchronized analysis of HEMOX recordings ag
 5. Confirm synchronization settings and run the pooled analysis.
 6. Review physiological agreement, calibration transfer, motion, signal quality, and bilateral-channel behavior.
 7. Export synchronized data, performance metrics, figures, reports, and fixed calibration parameters.
+
+For a quick test, extract the provided sample archive and load `*_FUSED_TRENDS.csv` together with `sp20-L00.csv` into the explorer. Supporting files from the same session can also be added for motion, SQI, raw-signal, and reporting analyses.
 
 ## 📥 Supported explorer inputs
 
@@ -135,7 +163,10 @@ HEMOX/
 ├── DEPLOYMENT.md             # GitHub Pages deployment notes
 ├── HEMOXV1.3.7.1.apk         # HEMOX Android application
 ├── README.md                 # Project documentation
-└── index.html                # Self-contained HEMOX Validation Explorer
+├── index.html                # Self-contained HEMOX Validation Explorer
+└── samples/
+    └── HEMOX_DUAL_20121986L00_20260818_213825.zip
+                              # Example HEMOX + SP-20 validation session
 ```
 
 ## 🔐 Privacy and reproducibility
@@ -145,10 +176,11 @@ HEMOX/
 - Synchronized observations, performance metrics, and analysis settings can be exported for audit and reproducibility.
 - The agreement convention used by the explorer is **HEMOX − SP-20**.
 - Calibration-development and independent-validation data are handled separately to avoid fitting on held-out validation recordings.
+- The sample archive provides a reproducible example of the expected HEMOX session-export structure.
 
 ## 📚 Citation
 
-If you use the HEMOX software platform, Android application, validation explorer, analysis workflow, generated figures, or exported results in academic work, please cite the repository.
+If you use the HEMOX software platform, Android application, validation explorer, analysis workflow, sample data structure, generated figures, or exported results in academic work, please cite the repository.
 
 ### IEEE-style reference
 
@@ -163,7 +195,7 @@ If you use the HEMOX software platform, Android application, validation explorer
   year         = {2026},
   howpublished = {GitHub repository},
   url          = {https://github.com/Ahmed-Reda-SILO/HEMOX},
-  note         = {Android application, validation explorer, and supporting software resources}
+  note         = {Android application, validation explorer, sample dataset, and supporting software resources}
 }
 ```
 
