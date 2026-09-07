@@ -1,12 +1,18 @@
 cff-version: 1.2.0
-message: "If you use the HEMOX Explorer in your research, please cite this software."
-title: "HEMOX–SP-20 Validation Explorer"
+message: "If you use the HEMOX platform, Android application, validation explorer, or sample dataset in your research, please cite this software."
+title: "HEMOX: Synchronous Dual-Site PPG–IMU Monitoring and Validation Platform"
 type: software
-version: 1.7.12
-date-released: 2026-08-25
+date-released: 2026-09-07
 authors:
   - family-names: Mohamed
     given-names: Ahmed Reda
+    affiliation: "Interdisciplinary Research Center for Communication Systems and Sensing (IRC-CSS), King Fahd University of Petroleum and Minerals (KFUPM), Dhahran, Saudi Arabia"
+  - family-names: Muqaibel
+    given-names: Ali Hussein
+    affiliation: "Electrical Engineering Department and Interdisciplinary Research Center for Communication Systems and Sensing (IRC-CSS), King Fahd University of Petroleum and Minerals (KFUPM), Dhahran, Saudi Arabia"
+  - family-names: Al-Absi
+    given-names: Muneer A.
+    affiliation: "Electrical Engineering Department and Interdisciplinary Research Center for Communication Systems and Sensing (IRC-CSS), King Fahd University of Petroleum and Minerals (KFUPM), Dhahran, Saudi Arabia"
 repository-code: "https://github.com/Ahmed-Reda-SILO/HEMOX"
 url: "https://ahmed-reda-silo.github.io/HEMOX/"
-abstract: "A browser-based explorer for synchronized HEMOX and SP-20 validation, calibration transfer, agreement analysis, motion and signal-quality assessment, and research reporting."
+abstract: "HEMOX is a wearable, wireless, synchronous dual-site PPG–IMU research platform for bilateral physiological monitoring. The repository includes the Android acquisition and monitoring application, a browser-based validation explorer, a sample HEMOX and commercial pulse-oximetry comparator dataset, and supporting resources for calibration, agreement analysis, motion and signal-quality assessment, and reproducible research reporting."
