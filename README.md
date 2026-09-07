@@ -184,13 +184,13 @@ If you use the HEMOX software platform, Android application, validation explorer
 
 ### IEEE-style reference
 
-> A. R. Mohamed, “HEMOX: Synchronous dual-site PPG–IMU monitoring and validation platform,” GitHub repository, 2026. [Online]. Available: https://github.com/Ahmed-Reda-SILO/HEMOX.
+> A. R. Mohamed, A. H. Muqaibel, and M. A. Al-Absi, “HEMOX: Synchronous dual-site PPG–IMU monitoring and validation platform,” GitHub repository, 2026. [Online]. Available: https://github.com/Ahmed-Reda-SILO/HEMOX.
 
 ### BibTeX
 
 ```bibtex
 @misc{Mohamed2026HEMOX,
-  author       = {Ahmed Reda Mohamed},
+  author       = {Ahmed Reda Mohamed and Ali Hussein Muqaibel and Muneer A. Al-Absi},
   title        = {{HEMOX}: Synchronous Dual-Site {PPG--IMU} Monitoring and Validation Platform},
   year         = {2026},
   howpublished = {GitHub repository},
@@ -216,6 +216,12 @@ Electrical Engineering Department
 King Fahd University of Petroleum and Minerals (KFUPM), Dhahran, Saudi Arabia  
 Interdisciplinary Research Center for Communication Systems and Sensing (IRC-CSS)  
 King Fahd University of Petroleum and Minerals (KFUPM), Dhahran, Saudi Arabia
+
+### Contributions
+
+- **Ahmed Reda Mohamed** — system design, wearable implementation, firmware, Android application, physiological-signal processing, validation framework, data analysis, and software development.
+- **Ali Hussein Muqaibel** — research supervision, methodology, experimental validation, and technical review.
+- **Muneer A. Al-Absi** — research supervision, system methodology, technical guidance, and manuscript/research review.
 
 Project profile: [Ahmed-Reda-SILO](https://github.com/Ahmed-Reda-SILO)
 
