@@ -199,9 +199,21 @@ If you use the HEMOX software platform, Android application, validation explorer
 }
 ```
 
-## 👨‍🔬 Author
+## 👨‍🔬 Authors
 
-**Dr. Ahmed Reda Mohamed, Member, IEEE**  
+**Dr. Ahmed Reda Mohamed**  
+Interdisciplinary Research Center for Communication Systems and Sensing (IRC-CSS)  
+King Fahd University of Petroleum and Minerals (KFUPM), Dhahran, Saudi Arabia
+
+**Prof. Ali Hussein Muqaibel**  
+Electrical Engineering Department  
+King Fahd University of Petroleum and Minerals (KFUPM), Dhahran, Saudi Arabia  
+Interdisciplinary Research Center for Communication Systems and Sensing (IRC-CSS)  
+King Fahd University of Petroleum and Minerals (KFUPM), Dhahran, Saudi Arabia
+
+**Prof. Muneer A. Al-Absi**  
+Electrical Engineering Department  
+King Fahd University of Petroleum and Minerals (KFUPM), Dhahran, Saudi Arabia  
 Interdisciplinary Research Center for Communication Systems and Sensing (IRC-CSS)  
 King Fahd University of Petroleum and Minerals (KFUPM), Dhahran, Saudi Arabia
 
