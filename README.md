@@ -26,35 +26,6 @@ The software workflow combines an Android acquisition/monitoring application wit
 > [!IMPORTANT]
 > HEMOX is a research platform. Agreement with a commercial pulse-oximetry comparator does **not** constitute formal arterial-reference pulse-oximetry validation or clinical diagnostic certification.
 
-## 🎯 System concept
-
-The HEMOX workflow follows an end-to-end synchronized multi-site architecture:
-
-```text
-CH1 PPG + IMU ─┐
-               ├─> Synchronized wireless acquisition
-CH2 PPG + IMU ─┘              │
-                              ▼
-                   Common bilateral timeline
-                              │
-              ┌───────────────┴───────────────┐
-              ▼                               ▼
-      Recording / export          Motion + signal quality
-                                              │
-                                              ▼
-                                  Site-specific estimates
-                                              │
-                                              ▼
-                                   Adaptive multi-site fusion
-                                              │
-                                              ▼
-                                   Calibration correction
-                                              │
-                                              ▼
-                                      HR / SpO₂ output
-```
-
-The architecture separates acquisition, storage, analysis, and calibration so that synchronized raw measurements are preserved independently of downstream processing.
 
 ## 📱 HEMOX Android application
 
