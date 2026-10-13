@@ -125,6 +125,10 @@ The explorer automatically inspects compatible column names and uses synchronize
 | Technical report | Produce structured findings, equations, limitations, and interpretation |
 | Export | Generate reproducible tables, figures, synchronized pairs, and calibration settings |
 
+## 🐍 Python analysis scripts
+
+The [`scripts/`](scripts/) directory contains 13 Python scripts for PPG preprocessing, motion thresholds, signal quality, reliability-aware fusion, synchronization validation, calibration, physiological agreement, and figure generation.
+
 ## 📁 Repository contents
 
 ```text
@@ -135,6 +139,7 @@ HEMOX/
 ├── HEMOXV1.3.7.1.apk         # HEMOX Android application
 ├── README.md                 # Project documentation
 ├── index.html                # Self-contained HEMOX Validation Explorer
+├── scripts/                 # Python analysis and figure-generation scripts
 └── samples/
     └── HEMOX_DUAL_20121986L00_20260818_213825.zip
                               # Example HEMOX + SP-20 validation session
