@@ -1,0 +1,244 @@
+HEMOX Dual-Site Monitor v1.3.7.1
+FINAL POST-RECORDING RESEARCH ANALYSIS REPORT
+=================================================
+
+Decision: PASS
+Reason: Both research SpO2 estimates are at least 95% and the absolute difference is no more than 3%.
+
+IMPORTANT: This is an uncalibrated research estimate. It is not a
+diagnosis, medical advice, or a substitute for an approved pulse
+oximeter and clinical evaluation.
+
+Session
+-------
+Generated: 2026-09-21 10:03:50
+Subject ID: HEMOXP01S02
+CH1 position: right
+CH2 position: left
+Standard right-hand/foot placement: NO
+Placement note: Nonstandard placement does not block analysis; interpret the result as dual-site research analysis, not standard CCHD screening.
+notes=pig 3, age=38
+Source workbook: HEMOX_DUAL_HEMOXP01S02_20260921_100338_RECORDING.xlsx
+Source CSV: HEMOX_DUAL_HEMOXP01S02_20260921_100338_RAW.csv
+
+Acquisition and quality
+-----------------------
+Paired rows: 15000
+Duration: 299.98 s
+Common clean duration: 243.82 s
+Mean absolute synchronization difference: 1273.95 us
+Maximum absolute synchronization difference: 5146 us
+Quality sufficient for decision: YES
+SpO2 measured in both channels: YES
+Quality advisory: The full-recording repeated-PPG fraction exceeded the research warning threshold; optical freshness should be reviewed. SpO2 was measured, so this finding is reported as a warning and does not override the SpO2 decision.
+
+Channel 1
+---------
+Heart rate: 69.77 bpm
+Heart-rate IQR: 3.25 bpm
+Research SpO2 estimate: 97.28%
+SpO2 IQR: 0.23 percentage points
+Estimated perfusion index: 0.483%
+Perfusion-index IQR: 0.157 percentage points
+Valid clean beats: 298
+Maximum continuous clean interval: 30.66 s
+Clean time after stabilization: 264.50 s
+First PI/HR/SpO2 availability: 19.92 / 24.32 / 26.98 s
+Median ratio R: 0.3954
+IMU motion samples: 7.52%
+Adaptive acceleration noise floor: 0.00049 g RMS
+Effective acceleration threshold: 0.00240 g RMS
+Acceleration release threshold: 0.00192 g RMS
+Adaptive gyroscope noise floor: 0.2171 deg/s RMS
+Effective gyroscope threshold: 1.1255 deg/s RMS
+Gyroscope release threshold: 0.9004 deg/s RMS
+Calibration noise guard: used | interval 17.0-22.0 s
+Guarded baseline-tracking updates: 4
+Clean duration: 277.45 s
+Accepted windows: 130/147 (88.4%)
+Median hybrid PPG SQI: 0.955
+Hybrid PPG SQI IQR: 0.072
+SQI threshold mode: adaptive
+Adaptive SQI candidate/anchor windows: 85/34
+Adaptive SQI reference: 0.9720
+Adaptive SQI robust sigma: 0.0069
+Effective SQI accept/reject thresholds: 0.750 / 0.550
+Effective PPG-IMU overlap SQI threshold: 0.850
+SpO2-eligible windows: 123
+Uncertain SQI/consistency windows: 7
+Rejected by IMU motion: 8
+Rejected by poor contact: 0
+Rejected by stale PPG: 0
+Full-recording repeated RED+IR fraction: 54.87%
+Full-recording longest repeated RED+IR run: 0.360 s
+Repeated-PPG warning threshold/status: 30% / WARNING
+Rejected by clipping: 0
+Rejected by optical/HR quality: 2
+PPG-IMU overlap warnings: 16
+Cross-channel HR warnings: 1
+
+Channel 2
+---------
+Heart rate: 69.48 bpm
+Heart-rate IQR: 3.25 bpm
+Research SpO2 estimate: 98.66%
+SpO2 IQR: 0.63 percentage points
+Estimated perfusion index: 0.438%
+Perfusion-index IQR: 0.102 percentage points
+Valid clean beats: 292
+Maximum continuous clean interval: 89.78 s
+Clean time after stabilization: 246.96 s
+First PI/HR/SpO2 availability: 18.18 / 20.88 / 22.64 s
+Median ratio R: 0.3139
+IMU motion samples: 13.65%
+Adaptive acceleration noise floor: 0.00051 g RMS
+Effective acceleration threshold: 0.00200 g RMS
+Acceleration release threshold: 0.00160 g RMS
+Adaptive gyroscope noise floor: 0.0743 deg/s RMS
+Effective gyroscope threshold: 0.6326 deg/s RMS
+Gyroscope release threshold: 0.5060 deg/s RMS
+Calibration noise guard: used | interval 21.0-26.0 s
+Guarded baseline-tracking updates: 8
+Clean duration: 259.05 s
+Accepted windows: 106/147 (72.1%)
+Median hybrid PPG SQI: 0.914
+Hybrid PPG SQI IQR: 0.111
+SQI threshold mode: adaptive
+Adaptive SQI candidate/anchor windows: 90/36
+Adaptive SQI reference: 0.9586
+Adaptive SQI robust sigma: 0.0101
+Effective SQI accept/reject thresholds: 0.750 / 0.550
+Effective PPG-IMU overlap SQI threshold: 0.850
+SpO2-eligible windows: 82
+Uncertain SQI/consistency windows: 9
+Rejected by IMU motion: 32
+Rejected by poor contact: 0
+Rejected by stale PPG: 0
+Full-recording repeated RED+IR fraction: 66.52%
+Full-recording longest repeated RED+IR run: 0.320 s
+Repeated-PPG warning threshold/status: 30% / WARNING
+Rejected by clipping: 0
+Rejected by optical/HR quality: 0
+PPG-IMU overlap warnings: 4
+Cross-channel HR warnings: 1
+
+Dual-channel fusion
+-------------------
+Fused heart rate: 69.63 bpm
+Fused research SpO2: 97.93%
+Absolute CH1-CH2 SpO2 difference: 1.39 percentage points
+Fused perfusion index: 0.462%
+Fused SQI: 0.936
+Overall conservative fusion confidence: High
+HR fusion confidence/contributors: High / CH1 + CH2
+HR fusion advisory: Both channels agree and contribute to HR.
+SpO2 fusion confidence/contributors: High / CH1 + CH2
+SpO2 fusion advisory: Both channels agree and contribute to SpO2.
+PI fusion confidence/contributors: High / CH1 + CH2
+PI fusion advisory: Both channels agree and contribute to PI.
+SQI fusion confidence/contributors: High / CH1 + CH2
+SQI fusion advisory: Both channels agree and contribute to SQI.
+CH1/CH2 weights: 0.883 / 0.789
+Fusion advisory: Overall confidence is the most conservative parameter-specific confidence; see each fused metric for contributors and evidence.
+
+Decision rule
+-------------
+PASS: both channels >= 95% and absolute difference <= 3%.
+REPEAT AFTER 1 HOUR: either measured channel is 90-94.9% or the
+absolute difference between measured channels is > 3%.
+FAIL: either channel < 90%.
+When SpO2 is measured in both channels, motion, SQI, accepted-window,
+and HR-consistency findings remain warnings and do not override these rules.
+REPEAT MEASUREMENT is used only when SpO2 cannot be measured in both channels.
+Placement is reported for traceability but does not determine the decision.
+
+Processing specification
+------------------------
+Algorithm version: HEMOX-PRA-1.3.6.4-TRACKED-MOTION
+Sample rate: 50 Hz
+PPG band-pass: zero-phase 0.5-4.0 Hz biquads
+Analysis windows: 8 s, advanced every 2 s
+SpO2 equation: SpO2 = 104 - 17R
+Motion threshold mode: calibration-guarded adaptive with frozen slow tracking per channel
+Adaptive baseline: lowest-motion 40% of RMS samples
+Adaptive rule: baseline median + 5.0 x robust sigma
+Fallback acceleration threshold bounds: 0.002 to 0.01 g RMS
+Fallback gyroscope threshold bounds: 0.15 to 0.75 deg/s RMS
+Calibration guard: quietest complete 5 s interval after 2 s settling, searched within 30 s
+Calibration ON rule: max(P99, median + 6.0 x robust sigma); unstable guard is not used
+IMU RMS window: 0.5 s
+Motion onset confirmation: 0.15 s
+Baseline tracking: 30 s lookback, updated every 10 s
+Tracking guard: contact-valid candidates <= 1.50 x current ON; freeze below 60% candidates; max rise 20% per update
+Motion release: both detectors below baseline-aware OFF limits for 0.30 s
+Motion padding: 0.2 s
+Window rejection burden: > 26%
+Quality-warning full-recording IMU burden: >= 50% in CH1 or CH2
+Motion handling: reject contaminated samples/windows; raw PPG unchanged
+
+Hybrid optical quality: equal-weight PI, SNR, RED-IR correlation,
+periodicity, and pulse-morphology consistency.
+Signal-quality threshold mode: bounded adaptive, independently estimated per channel
+Adaptive SQI anchors: best trustworthy 40% of low-motion, hard-gate-valid windows
+Adaptive SQI rule: anchor median minus max(0.05, 2.5 x robust sigma), within safety bounds
+Adaptive SQI accept bounds: 0.65 to 0.75
+Adaptive SQI reject bounds: 0.45 to 0.55
+Safe fallback thresholds: accept >= 0.70, reject < 0.50
+Stale PPG gate: longest unchanged RED+IR run >= 0.50 s or unchanged fraction >= 90%
+Full-recording repeated-PPG warning: unchanged RED+IR pair fraction >= 30%; warning only, distinct from BLE packet loss
+PPG-IMU spectral overlap: downgrades only marginal windows using the
+channel-specific adaptive overlap threshold; fixed-safe fallback = 0.80
+Inter-channel HR warning: absolute difference > 5.0 bpm
+Waveform handling: reject questionable windows; no PPG reconstruction
+
+v1.3.7.1 readiness gates (processing core inherited from v1.3.6.16.3)
+Contact check: 2 continuous seconds
+IMU settling: 2 seconds
+IMU calibration: minimum 5 stable seconds, extendable to 10 seconds
+PPG stabilization: 5 clean seconds after IMU calibration
+PI/HR/SpO2: at least 5/8/10 valid beats, respectively
+Live estimates are provisional; this report is recomputed from the full recording.
+
+Limitations
+-----------
+1. The SpO2 equation is generic and must be calibrated against a reference.
+2. A failed research screen is not a diagnosis of congenital heart disease.
+3. Standard screening placement is right hand (preductal) and either foot
+   (postductal); two-finger measurements are not standard CCHD screening.
+4. PI and all fused outputs are research estimates.
+5. Clinical or neonatal use requires ethics approval, clinical oversight,
+   calibration, and validation with approved equipment.
+
+
+PARTICIPANT ANTHROPOMETRICS
+---------------------------
+Weight: 95.00 kg
+Height: 183.00 cm
+BMI: 28.37 kg/m^2 (display-only)
+Algorithm use: NONE — metadata only
+
+
+POST-FUSION CALIBRATION AUDIT
+-----------------------------
+Status: experimental research transfer calibration
+Application point: after quality-valid fusion
+Research Decision affected: NO
+Validated fused SpO2: 97.932%
+Calibrated fused SpO2: 97.519%
+SpO2 equation: SpO2cal = SpO2fused -0.412443
+Validated fused HR: 69.634 bpm
+Calibrated fused HR: 69.634 bpm
+HR equation: HRcal = HRfused +0.000000
+Clipping flags — SpO2/HR: false/false
+
+Acquisition integrity
+---------------------
+CH1 received/missing/duplicate/out-of-order/malformed: 15000/0/0/0/0
+CH2 received/missing/duplicate/out-of-order/malformed: 15000/0/0/0/0
+CH1/CH2 missing rate: 0.0000 / 0.0000%
+Unpaired evictions: 0
+Buffered storage rows/write errors/maximum backlog: 30000/0/4
+
+Quality-valid measurement alerts
+--------------------------------
+None

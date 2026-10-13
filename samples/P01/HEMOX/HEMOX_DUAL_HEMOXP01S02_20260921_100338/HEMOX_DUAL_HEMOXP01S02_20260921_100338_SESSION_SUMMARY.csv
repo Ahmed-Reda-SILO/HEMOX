@@ -1,0 +1,2 @@
+participant_id,recording_timestamp,fused_spo2_percent,fused_hr_bpm,fused_sqi,research_decision,fused_spo2_calibrated_percent,fused_hr_calibrated_bpm,decision_value_domain
+"HEMOXP01S02","2026-09-21 10:03:58",97.932,69.634,0.935595,"PASS",97.519,69.634,"validated_pre_calibration"
