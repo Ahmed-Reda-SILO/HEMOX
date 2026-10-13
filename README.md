@@ -6,10 +6,12 @@
 
 [![Android App](https://img.shields.io/badge/Android-v1.3.7.1-3DDC84?style=for-the-badge&logo=android&logoColor=white)](HEMOXV1.3.7.1.apk)
 [![Explorer](https://img.shields.io/badge/Validation%20Explorer-v1.7.12-1261A0?style=for-the-badge)](index.html)
+[![P01 Sample](https://img.shields.io/badge/Sample-P01%20%7C%204%20runs-8A2BE2?style=for-the-badge)](samples/P01/)
 [![GitHub Pages](https://img.shields.io/badge/Open-HEMOX%20Explorer-222?style=for-the-badge&logo=github)](https://ahmed-reda-silo.github.io/HEMOX/)
 
 **[📱 Download HEMOX Android App](HEMOXV1.3.7.1.apk)**  
 **[🚀 Open the HEMOX Validation Explorer](https://ahmed-reda-silo.github.io/HEMOX/)**  
+**[📦 Browse the P01 Sample Dataset](samples/P01/)**  
 **[🐍 Browse the Python Analysis Scripts](scripts/)**
 
 </div>
@@ -65,27 +67,37 @@ The browser-based explorer supports synchronized analysis of HEMOX recordings ag
 - M0–M3 calibration-model comparison with fixed coefficients
 - export of synchronized pairs, metrics, figures, reports, and calibration settings
 
-## 📦 Sample recordings and export format
+## 📦 P01 sample dataset
 
-Example raw HEMOX recordings and corresponding SP-20 comparator CSVs are available in [`samples/P01/`](samples/P01/), covering runs S01, S02, NS01, and NS02.
+The updated [`samples/P01/`](samples/P01/) dataset contains **four paired recording sessions**: two stationary runs (S01, S02) and two controlled-motion runs (NS01, NS02). Each HEMOX session includes all **nine export types** listed below, together with a matching SP-20 comparator CSV. The dataset contains **36 HEMOX export files and 4 SP-20 files**.
 
-HEMOX session exports can include the following files, depending on the recording and export configuration:
+### Paired recordings
+
+| Run | Condition | HEMOX exports | SP-20 comparator |
+|---|---|---|---|
+| **S01** | Stationary | [Session folder](samples/P01/HEMOX/HEMOX_DUAL_HEMOXP01S01_20260921_095135/) | [SP20P01S01.csv](samples/P01/SP20/SP20P01S01.csv) |
+| **S02** | Stationary | [Session folder](samples/P01/HEMOX/HEMOX_DUAL_HEMOXP01S02_20260921_100338/) | [SP20P01S02.csv](samples/P01/SP20/SP20P01S02.csv) |
+| **NS01** | Controlled motion | [Session folder](samples/P01/HEMOX/HEMOX_DUAL_HEMOXP01NS01_20260921_101149/) | [SP20P01NS01.csv](samples/P01/SP20/SP20P01NS01.csv) |
+| **NS02** | Controlled motion | [Session folder](samples/P01/HEMOX/HEMOX_DUAL_HEMOXP01NS02_20260921_101755/) | [SP20P01NS02.csv](samples/P01/SP20/SP20P01NS02.csv) |
+
+### Files included in each HEMOX session
 
 | File | Description |
 |---|---|
-| `*_RAW.csv` | synchronized raw bilateral PPG and IMU recording |
-| `*_PARAMETER_TRENDS.csv` | time-varying physiological and quality parameters |
-| `*_FUSED_TRENDS.csv` | fused physiological output used for comparator analysis |
-| `*_WINDOWS.csv` | window-level processing and quality information |
-| `*_MOTION_THRESHOLDS.csv` | motion-related threshold information |
-| `*_SESSION_SUMMARY.csv` | compact session-level summary |
-| `*_METADATA.txt` | recording and configuration metadata |
+| `*_RAW.csv` | synchronized bilateral red/infrared PPG and IMU recording |
+| `*_PARAMETER_TRENDS.csv` | CH1, CH2, and fused physiological, quality, and motion trends |
+| `*_FUSED_TRENDS.csv` | fused physiological output, quality flags, and separately labelled calibrated values |
+| `*_WINDOWS.csv` | window-level estimates, signal quality, motion burden, acceptance status, and SpO₂ eligibility |
+| `*_MOTION_THRESHOLDS.csv` | time-varying CH1/CH2 acceleration and gyroscope thresholds |
+| `*_SESSION_SUMMARY.csv` | compact session-level physiological and research-decision summary |
+| `*_METADATA.txt` | recording, acquisition, and processing configuration |
 | `*_REPORT.txt` | generated session report |
 | `*_RECORDING.xlsx` | consolidated spreadsheet export |
-| `SP20*.csv` | corresponding commercial pulse-oximetry comparator recording |
+
+The matching `SP20P01<run>.csv` files are stored in [`samples/P01/SP20/`](samples/P01/SP20/).
 
 > [!NOTE]
-> The P01 sample folder contains raw recordings and comparator CSVs, rather than the complete set of exports listed above. It is not the complete experimental dataset used for calibration and validation. Physiological comparison in the explorer also requires corresponding fused or compatible validated trends.
+> P01 is one participant from the calibration-development cohort. These recordings demonstrate the export format and single-participant analysis workflow. Participant-disjoint independent validation requires the additional development and held-out participant recordings.
 
 ## 🧭 Typical validation workflow
 
@@ -97,7 +109,15 @@ HEMOX session exports can include the following files, depending on the recordin
 6. Review physiological agreement, calibration transfer, motion, signal quality, and bilateral-channel behavior.
 7. Export synchronized data, performance metrics, figures, reports, and fixed calibration parameters.
 
-For physiological comparison, load `*_FUSED_TRENDS.csv` together with the matching SP-20 recording into the explorer. Supporting files from the same session can also be added for motion, SQI, raw-signal, and reporting analyses.
+### Quick start with P01
+
+1. Clone or download the repository and locate `samples/P01/`.
+2. Open the [HEMOX Explorer](https://ahmed-reda-silo.github.io/HEMOX/) and add a run, for example **P01/S01**.
+3. Upload `SP20P01S01.csv` from the `SP20/` folder and `*_FUSED_TRENDS.csv` from the matching S01 HEMOX session folder in the table above.
+4. Add the same session's `PARAMETER_TRENDS`, `RAW`, `WINDOWS`, `MOTION_THRESHOLDS`, `SESSION_SUMMARY`, `METADATA`, and `REPORT` files for supporting analyses. The `RECORDING.xlsx` workbook is available for spreadsheet inspection.
+5. Check the common recording interval and HEMOX time offset before running the analysis. Repeat with S02, NS01, and NS02 to inspect all four sessions.
+
+The `FUSED_TRENDS` files include native `fused_hr_bpm` and `fused_spo2_percent` fields, a `quality_valid` flag, and separately labelled calibrated fields. Use native estimates when reproducing post-fusion calibration so that the correction is applied once.
 
 ## 📥 Supported explorer inputs
 
@@ -168,17 +188,17 @@ Full-cohort analyses require the corresponding participant/run recordings. The P
 
 ### Example commands
 
-Replace `path/to/data` with your data directory and select a participant/run present in that dataset.
+Run the P01 examples from the repository root after installing the dependencies above. For other datasets, replace the input path and participant/run selection.
 
 ```bash
-# PPG preprocessing figures for one controlled-motion run
-python scripts/PPG_Preprocessing_Plots.py --input "path/to/data" --participant P09 --run NS02 --out-dir "outputs/preprocessing"
+# PPG preprocessing figures using the P01/NS01 sample
+python scripts/PPG_Preprocessing_Plots.py --input "samples" --participant P01 --run NS01 --out-dir "outputs/P01_preprocessing"
 
-# CH1/CH2 and fused-trend visualization for the same run
-python scripts/Reliability_Aware_Fusion.py --data-dir "path/to/data" --participant P09 --run NS02 --out-dir "outputs/fusion"
+# CH1/CH2 and fused-trend visualization for the same sample run
+python scripts/Reliability_Aware_Fusion.py --data-dir "samples" --participant P01 --run NS01 --out-dir "outputs/P01_fusion"
 
-# Post-calibration agreement using extracted P01–P10 folders
-python scripts/bland_Altman_perf_after_calibration.py --data-dir "path/to/data" --out-dir "outputs/agreement"
+# Full-cohort agreement example: requires extracted P01–P10 study folders
+python scripts/bland_Altman_perf_after_calibration.py --data-dir "path/to/full-study-data" --out-dir "outputs/agreement"
 
 # View available options for a command-line script
 python scripts/Study_SQI_FullRange_Analysis.py --help
@@ -200,9 +220,9 @@ HEMOX/
 ├── index.html                # Self-contained HEMOX Validation Explorer
 ├── scripts/                 # Python analysis and figure-generation scripts
 └── samples/
-    └── P01/
-        ├── HEMOX/           # Example raw bilateral recordings
-        └── SP20/            # Corresponding comparator recordings
+    └── P01/                 # Four paired sessions, 40 files
+        ├── HEMOX/           # Four session folders, nine exports each
+        └── SP20/            # Four matching comparator CSV files
 ```
 
 ## 🔐 Privacy and reproducibility
@@ -212,7 +232,7 @@ HEMOX/
 - Synchronized observations, performance metrics, and analysis settings can be exported for audit and reproducibility.
 - The agreement convention used by the explorer is **HEMOX − SP-20**.
 - Calibration-development and independent-validation data are handled separately to avoid fitting on held-out validation recordings.
-- The `samples/P01/` directory provides example raw HEMOX and corresponding SP-20 recordings.
+- The `samples/P01/` directory provides four paired sessions with raw signals, fused and channel-level trends, quality/motion evidence, session reports, spreadsheet exports, and SP-20 comparator recordings.
 
 ## 📚 Citation
 
